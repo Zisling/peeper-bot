@@ -65,10 +65,10 @@ def almog_send(message):
 @bot.message_handler(commands=['Videos'])
 def send_hw(message):
     videos = my_bot_res.list_of("my_videos")
-    str = ""
+    reply = ""
     for x in videos:
-        str = str + '\n' + x
-    bot.reply_to(message, str)
+        reply = reply + '\n' + x
+    bot.reply_to(message, reply)
 
 # /AddTask [subject] [Task description]
 # @bot.message_handler(func=check_add, commands=['AddTask'])
