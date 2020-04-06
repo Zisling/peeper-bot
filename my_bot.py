@@ -66,8 +66,15 @@ def gif(message):
 @bot.message_handler(commands=['Help', 'help'])
 def send_list_of_commands(message):
     bot.reply_to(message, """
-    you mast use /start for the bot to react to you
-/start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video\n/credits
+you mast use /start for the bot to react to you
+start - let the giant rubber duck in the sky to listen to you
+help - let the giant rubber duck in the sky to help
+duck - let the giant rubber duck in the sky to guide you
+videos - let the giant rubber duck in the sky to show
+corona - let the giant rubber duck in the sky to heal you
+gif - let the giant rubber duck in the sky to gif you
+video - let the giant rubber duck in the sky to video you
+credits - let the giant rubber duck in the sky to credit you
     """)
 
 
