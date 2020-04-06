@@ -16,7 +16,7 @@ story = {
             'text:you start singing in the shower and then...',
             'text:a sword cut the duck down',
             'text:you start a fight with 12 different duck ninja',
-            'text:and you lose and die while ivy is watching you\nimg:ivy.png',
+            'text:and you lose and die while Eevee is watching you\nimg:ivy.png',
             ),
     "blue": ('img:blue1.jpg',
              'img:blue2.jpg',

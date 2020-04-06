@@ -29,7 +29,7 @@ def corona(message):
     bot.send_animation(message.chat.id, open('corona.gif', 'rb'))
 
 
-@bot.message_handler(commands=['random_vid', 'Random_vid'])
+@bot.message_handler(commands=['random_video', 'Random_video', 'video', 'Video'])
 def vid(message):
     try:
         print(message)
@@ -40,7 +40,7 @@ def vid(message):
         bot.reply_to(message, 'oooops server time out')
 
 
-@bot.message_handler(commands=['random_gif', 'Random_gif'])
+@bot.message_handler(commands=['random_gif', 'Random_gif', 'gif'])
 def gif(message):
     try:
         print(message)
@@ -81,19 +81,19 @@ def send_hw(message):
 #     bot.reply_to(message, "i have added to %s the task %s" % (data[1], data[2]))
 
 
-@bot.message_handler(commands=['ivy'])
-def ivy(message):
+@bot.message_handler(commands=['Eevee '])
+def Eevee (message):
     bot.send_photo(message.chat.id, open('ivy.png', 'rb'))
-    bot.send_message(message.chat.id, "or zivivy")
+    bot.send_message(message.chat.id, "or zivEevee")
     bot.send_photo(message.chat.id, open('zivivy.png', 'rb'))
     msg = bot.send_message(message.chat.id, "give as the answer now")
-    bot.register_next_step_handler(msg, the_ivy_question)
+    bot.register_next_step_handler(msg, the_Eevee_question)
 
 
-def the_ivy_question(message):
+def the_Eevee_question(message):
     try:
         answer = message.text
-        if answer == 'zivivy':
+        if answer == 'zivEevee ':
             bot.send_message(message.chat.id, 'good boy')
         else:
             bot.send_message(message.chat.id, 'bad boy go and think on what you done')
