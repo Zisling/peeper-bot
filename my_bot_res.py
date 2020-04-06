@@ -33,8 +33,10 @@ story = {
 
 
 def random_vid():
-    list_vid = glob.glob('random_vid/*.mp4')
-    list_vid.extend(list['my_videos'])
+    # switch to add video from the pc
+    # list_vid = glob.glob('random_vid/*.mp4')
+    # list_vid.extend(list['my_videos'])
+    list_vid = list['my_videos'] # switch
     ret = random.choice(list_vid)
     x = re.match('.+\.mp4', str(ret))
     if x is not None and x.span()[1] == str(ret).__len__():
