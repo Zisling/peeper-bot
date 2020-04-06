@@ -118,7 +118,7 @@ def duck_debug(message):
 
 
 def duck2(message):
-    duck_id = message.chat.id if message.chat.type == 'private' else message.from_user.id
+    duck_id = message.chat.id
     try:
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, "you chosen %s" % message.text, reply_markup=markup)
@@ -140,7 +140,7 @@ def duck2(message):
 
 
 def duck_step(message):
-    duck_id = message.chat.id if message.chat.type == 'private' else message.from_user.id
+    duck_id = message.chat.id
     try:
         markup = types.ReplyKeyboardRemove(selective=False)
         answer = message.text
