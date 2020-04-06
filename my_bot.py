@@ -5,6 +5,11 @@ import my_bot_res
 from telebot import types
 
 bot = telebot.TeleBot("1242526231:AAF_E6iJo8Gw0GpTjgOI3k2wGlJJZQzWeYI")
+users = my_bot_res.Users()
+
+
+def user_is_in(message):
+    return users.__contains__(message.from_user.id)
 
 
 def check_add(message):
@@ -20,23 +25,24 @@ def check_add(message):
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     print(message)
+    users.add_user(message.from_user.id)
     bot.reply_to(message, message.from_user.first_name + """ you need some hot 🌶 so call to your local farmer""")
 
 
-@bot.message_handler(commands=['credit'])
+@bot.message_handler(func=user_is_in, commands=['credit'])
 def send_welcome(message):
     print(message)
     bot.reply_to(message, 'this bot crated by {} as a joke and will probably crash and set on fire in one second'
                  .format(message.from_user.first_name))
 
 
-@bot.message_handler(commands=['corona'])
+@bot.message_handler(func=user_is_in, commands=['corona'])
 def corona(message):
     print(message)
     bot.send_animation(message.chat.id, open('corona.gif', 'rb'))
 
 
-@bot.message_handler(commands=['random_video', 'Random_video', 'video', 'Video'])
+@bot.message_handler(func=user_is_in, commands=['random_video', 'Random_video', 'video', 'Video'])
 def vid(message):
     try:
         print(message)
@@ -47,7 +53,7 @@ def vid(message):
         bot.reply_to(message, 'oooops server time out')
 
 
-@bot.message_handler(commands=['random_gif', 'Random_gif', 'gif'])
+@bot.message_handler(func=user_is_in, commands=['random_gif', 'Random_gif', 'gif'])
 def gif(message):
     try:
         print(message)
@@ -60,11 +66,12 @@ def gif(message):
 @bot.message_handler(commands=['Help', 'help'])
 def send_list_of_commands(message):
     bot.reply_to(message, """
+    you mast use /start for the bot to react to you
     /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video\n/credit
     """)
 
 
-@bot.message_handler(regexp='🦆')
+@bot.message_handler(func=user_is_in, regexp='🦆')
 def pepper_send(message):
     print(message)
     bot.reply_to(message, '{} has used a duck in the chat\nremember a duck is not a rubber duck, so please {} dont use '
@@ -73,14 +80,14 @@ def pepper_send(message):
                  .format(message.from_user.first_name, message.from_user.first_name))
 
 
-@bot.message_handler(regexp='🌶')
+@bot.message_handler(func=user_is_in, regexp='🌶')
 def pepper_send(message):
     print(message)
     bot.reply_to(message, '{} has used a pepper in the chat\nall hail {}!'
                  .format(message.from_user.first_name, message.from_user.first_name))
 
 
-@bot.message_handler(commands=['Videos'])
+@bot.message_handler(func=user_is_in, commands=['Videos'])
 def send_hw(message):
     videos = my_bot_res.list_of("my_videos")
     reply = ""
@@ -97,7 +104,7 @@ def send_hw(message):
 #     bot.reply_to(message, "i have added to %s the task %s" % (data[1], data[2]))
 
 
-@bot.message_handler(commands=['Eevee'])
+@bot.message_handler(func=user_is_in, commands=['Eevee'])
 def Eevee(message):
     bot.send_photo(message.chat.id, open('ivy.png', 'rb'))
     bot.send_message(message.chat.id, "or zivEevee")
@@ -118,7 +125,7 @@ def the_Eevee_question(message):
         bot.reply_to(message, 'oooops')
 
 
-@bot.message_handler(commands=['duck'])
+@bot.message_handler(func=user_is_in, commands=['duck'])
 def duck_debug(message):
     print(message.from_user.first_name)
     markup = types.ReplyKeyboardMarkup(row_width=2)

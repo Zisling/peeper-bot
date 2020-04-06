@@ -28,15 +28,25 @@ story = {
               'text:run for your life',
               ),
     "the big duck up in the sky": ('img:the_big_duck_in_the_sky.png',)
-
 }
+
+
+class Users:
+    def __init__(self):
+        self.users = ()
+
+    def add_user(self, user_id):
+        self.users = self.users.__add__((user_id,))
+
+    def __contains__(self, item):
+        return self.users.__contains__(item)
 
 
 def random_vid():
     # switch to add video from the pc
     # list_vid = glob.glob('random_vid/*.mp4')
     # list_vid.extend(list['my_videos'])
-    list_vid = list['my_videos'] # switch
+    list_vid = list['my_videos']  # switch
     ret = random.choice(list_vid)
     x = re.match('.+\.mp4', str(ret))
     if x is not None and x.span()[1] == str(ret).__len__():
