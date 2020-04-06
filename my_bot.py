@@ -97,7 +97,7 @@ def send_hw(message):
 #     bot.reply_to(message, "i have added to %s the task %s" % (data[1], data[2]))
 
 
-@bot.message_handler(commands=['Eevee '])
+@bot.message_handler(commands=['Eevee'])
 def Eevee(message):
     bot.send_photo(message.chat.id, open('ivy.png', 'rb'))
     bot.send_message(message.chat.id, "or zivEevee")
