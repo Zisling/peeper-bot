@@ -60,7 +60,7 @@ def send_list_of_commands(message):
 @bot.message_handler(regexp='🌶')
 def pepper_send(message):
     print(message)
-    bot.reply_to(message, '{} has use a pepper in the chat\nall hail {}!'
+    bot.reply_to(message, '{} has used a pepper in the chat\nall hail {}!'
                  .format(message.from_user.first_name, message.from_user.first_name))
 
 
