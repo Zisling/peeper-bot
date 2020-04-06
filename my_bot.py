@@ -57,9 +57,10 @@ def send_list_of_commands(message):
     """)
 
 
-@bot.message_handler(func=lambda m: str(m.text).lower() == 'almog almog')
-def almog_send(message):
-    bot.reply_to(message, 'Almog! Almog!')
+@bot.message_handler(func=lambda m: str(m.text).__contains__('🌶'))
+def pepper_send(message):
+    bot.reply_to(message, '{} has use a pepper in the chat\nall hail {}!'
+                 .format(message.from_user.first_name,message.from_user.first_name))
 
 
 @bot.message_handler(commands=['Videos'])
