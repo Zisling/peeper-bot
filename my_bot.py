@@ -53,7 +53,7 @@ def gif(message):
 @bot.message_handler(commands=['Help', 'help'])
 def send_list_of_commands(message):
     bot.reply_to(message, """
-    /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_vid
+    /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video
     """)
 
 
