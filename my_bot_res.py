@@ -35,8 +35,8 @@ class Users:
     def __init__(self):
         self.users = ()
 
-    def add_user(self, user_id):
-        self.users = self.users.__add__((user_id,))
+    def add_user(self, user_id, chat_id):
+        self.users = self.users.__add__(((user_id, chat_id),))
 
     def __contains__(self, item):
         return self.users.__contains__(item)

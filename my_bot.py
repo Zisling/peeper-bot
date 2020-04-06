@@ -9,7 +9,7 @@ users = my_bot_res.Users()
 
 
 def user_is_in(message):
-    return users.__contains__(message.from_user.id)
+    return users.__contains__((message.from_user.id, message.chat.id))
 
 
 def check_add(message):
@@ -25,7 +25,7 @@ def check_add(message):
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     print(message)
-    users.add_user(message.from_user.id)
+    users.add_user(message.from_user.id, message.chat.id)
     bot.reply_to(message, message.from_user.first_name + """ you need some hot 🌶 so call to your local farmer""")
 
 
@@ -128,7 +128,8 @@ def the_Eevee_question(message):
 @bot.message_handler(func=user_is_in, commands=['duck'])
 def duck_debug(message):
     print(message.from_user.first_name)
-    markup = types.ReplyKeyboardMarkup(row_width=2)
+    width = 3
+    markup = types.ReplyKeyboardMarkup(row_width=width)
     itembtn1 = types.KeyboardButton('yellow')
     itembtn2 = types.KeyboardButton('red')
     itembtn3 = types.KeyboardButton('blue')
