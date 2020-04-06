@@ -23,6 +23,13 @@ def send_welcome(message):
     bot.reply_to(message, message.from_user.first_name + """ you need some hot 🌶 so call to your local farmer""")
 
 
+@bot.message_handler(commands=['credit'])
+def send_welcome(message):
+    print(message)
+    bot.reply_to(message, 'this bot crated by {} as a joke and will probably crash and set on fire in one second'
+                 .format(message.from_user.first_name))
+
+
 @bot.message_handler(commands=['corona'])
 def corona(message):
     print(message)
@@ -53,7 +60,7 @@ def gif(message):
 @bot.message_handler(commands=['Help', 'help'])
 def send_list_of_commands(message):
     bot.reply_to(message, """
-    /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video
+    /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video\n/credit
     """)
 
 
@@ -82,7 +89,7 @@ def send_hw(message):
 
 
 @bot.message_handler(commands=['Eevee '])
-def Eevee (message):
+def Eevee(message):
     bot.send_photo(message.chat.id, open('ivy.png', 'rb'))
     bot.send_message(message.chat.id, "or zivEevee")
     bot.send_photo(message.chat.id, open('zivivy.png', 'rb'))
