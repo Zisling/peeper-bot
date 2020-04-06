@@ -57,10 +57,11 @@ def send_list_of_commands(message):
     """)
 
 
-@bot.message_handler(func=lambda m: str(m.text).__contains__('🌶'))
+@bot.message_handler(regexp='🌶')
 def pepper_send(message):
+    print(message)
     bot.reply_to(message, '{} has use a pepper in the chat\nall hail {}!'
-                 .format(message.from_user.first_name,message.from_user.first_name))
+                 .format(message.from_user.first_name, message.from_user.first_name))
 
 
 @bot.message_handler(commands=['Videos'])
@@ -70,6 +71,7 @@ def send_hw(message):
     for x in videos:
         reply = reply + '\n' + x
     bot.reply_to(message, reply)
+
 
 # /AddTask [subject] [Task description]
 # @bot.message_handler(func=check_add, commands=['AddTask'])
