@@ -32,7 +32,7 @@ def send_welcome(message):
 @bot.message_handler(func=user_is_in, commands=['credits'])
 def send_welcome(message):
     print(message)
-    bot.reply_to(message, 'this bot crated by {} as a joke and will probably crash and set on fire in one second'
+    bot.reply_to(message, 'this bot crated by {} as a joke and will probably crash and set on fire in one second 🔥'
                  .format(message.from_user.first_name))
 
 
