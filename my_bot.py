@@ -29,7 +29,7 @@ def send_welcome(message):
     bot.reply_to(message, message.from_user.first_name + """ you need some hot 🌶 so call to your local farmer""")
 
 
-@bot.message_handler(func=user_is_in, commands=['credit'])
+@bot.message_handler(func=user_is_in, commands=['credits'])
 def send_welcome(message):
     print(message)
     bot.reply_to(message, 'this bot crated by {} as a joke and will probably crash and set on fire in one second'
@@ -67,7 +67,7 @@ def gif(message):
 def send_list_of_commands(message):
     bot.reply_to(message, """
     you mast use /start for the bot to react to you
-    /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video\n/credit
+    /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video\n/credits
     """)
 
 
