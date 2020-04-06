@@ -64,6 +64,15 @@ def send_list_of_commands(message):
     """)
 
 
+@bot.message_handler(regexp='🦆')
+def pepper_send(message):
+    print(message)
+    bot.reply_to(message, '{} has used a duck in the chat\nremember a duck is not a rubber duck, so please {} dont use '
+                          'it as a debugger.\nfor safe practice of rubber duck debugging '
+                          '\nhttps://en.wikipedia.org/wiki/Rubber_duck_debugging '
+                 .format(message.from_user.first_name, message.from_user.first_name))
+
+
 @bot.message_handler(regexp='🌶')
 def pepper_send(message):
     print(message)
