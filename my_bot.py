@@ -116,6 +116,7 @@ def duck_debug(message):
 
 
 def duck2(message):
+    duck_id = message.chat.id if message.chat.type == 'private' else message.from_user.id
     try:
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(message.chat.id, "you chosen %s" % message.text, reply_markup=markup)
@@ -124,24 +125,25 @@ def duck2(message):
         markup2 = types.ReplyKeyboardMarkup(row_width=1)
         markup2.add(itembtn1)
         if answer == 'yellow' or answer == "red" or answer == 'white' or answer == 'the big duck up in the sky' or answer == 'blue':
-            duck = my_bot_res.get_self(message.chat.id, answer)
+            duck = my_bot_res.get_self(duck_id, answer)
             reply = duck.step()
             msg = multiple_reply(message, reply, markup2)
             bot.register_next_step_handler(msg, duck_step)
         else:
             bot.send_message(message.chat.id, 'not writen yet')
     except Exception as e:
-        my_bot_res.unregister(message.chat.id)
+        my_bot_res.unregister(duck_id)
         print(e)
         bot.reply_to(message, 'oooops')
 
 
 def duck_step(message):
+    duck_id = message.chat.id if message.chat.type == 'private' else message.from_user.id
     try:
         markup = types.ReplyKeyboardRemove(selective=False)
         answer = message.text
         if answer == 'Step':
-            duck = my_bot_res.get_self(message.chat.id)
+            duck = my_bot_res.get_self(duck_id)
             itembtn1 = types.KeyboardButton('Step')
             markup2 = types.ReplyKeyboardMarkup(row_width=1)
             markup2.add(itembtn1)
@@ -155,12 +157,12 @@ def duck_step(message):
                 bot.send_animation(message.chat.id, open('community_dance.gif', 'rb'))
                 print('end')
         else:
-            my_bot_res.unregister(message.chat.id)
+            my_bot_res.unregister(duck_id)
             bot.send_message(message.chat.id, "The end only step can be done in debug mod", reply_markup=markup)
             print("end badly")
     except Exception as e:
         print(e)
-        my_bot_res.unregister(message.chat.id)
+        my_bot_res.unregister(duck_id)
         bot.reply_to(message, 'oooops')
 
 
