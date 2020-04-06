@@ -1,1 +1,96 @@
 # Created by .ignore support plugin (hsz.mobi)
+### Images template
+# JPEG
+*.jpg
+*.jpeg
+*.jpe
+*.jif
+*.jfif
+*.jfi
+
+# JPEG 2000
+*.jp2
+*.j2k
+*.jpf
+*.jpx
+*.jpm
+*.mj2
+
+# JPEG XR
+*.jxr
+*.hdp
+*.wdp
+
+# Graphics Interchange Format
+*.gif
+
+# RAW
+*.raw
+
+# Web P
+*.webp
+
+# Portable Network Graphics
+*.png
+
+# Animated Portable Network Graphics
+*.apng
+
+# Multiple-image Network Graphics
+*.mng
+
+# Tagged Image File Format
+*.tiff
+*.tif
+
+# Scalable Vector Graphics
+*.svg
+*.svgz
+
+# Portable Document Format
+*.pdf
+
+# X BitMap
+*.xbm
+
+# BMP
+*.bmp
+*.dib
+
+# ICO
+*.ico
+
+# 3D Images
+*.3dm
+*.max
+
+/random_vid/
+.idea/$CACHE_FILE$
+.idea/.gitignore
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/telegrambot.iml
+4ducks.jpg
+__pycache__/
+angel1.jpg
+angel2.webp
+angry_dog.png
+blue1.jpg
+blue2.jpg
+blue3.jpg
+blue4.jpg
+bravissimo!.gif
+colbert_b.gif
+colbert_z.gif
+community_dance.gif
+corona.gif
+giphy.webp
+ivy.png
+my_bot.py
+my_bot_res.py
+pepper_almog.png
+random_vid/
+shake.gif
+the_big_duck_in_the_sky.png
+zivivy.png
