@@ -67,7 +67,7 @@ def gif(message):
 def send_list_of_commands(message):
     bot.reply_to(message, """
     you mast use /start for the bot to react to you
-    /start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video\n/credits
+/start\n/Help\n/Videos\n/duck\n/corona\n/Random_gif\n/Random_video\n/credits
     """)
 
 
