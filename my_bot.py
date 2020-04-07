@@ -22,11 +22,12 @@ def check_add(message):
         return False
 
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start', 'Start'])
 def send_welcome(message):
     print(message)
     users.add_user(message.from_user.id, message.chat.id)
-    bot.reply_to(message, message.from_user.first_name + """ you need some hot 🌶 so call to your local farmer""")
+    bot.reply_to(message, message.from_user.first_name + """ didn't choose the giant rubber duck in the sky
+    he choose him""")
 
 
 @bot.message_handler(func=user_is_in, commands=['credits'])
@@ -94,7 +95,7 @@ def pepper_send(message):
                  .format(message.from_user.first_name, message.from_user.first_name))
 
 
-@bot.message_handler(func=user_is_in, commands=['Videos'])
+@bot.message_handler(func=user_is_in, commands=['Videos', 'videos'])
 def send_hw(message):
     videos = my_bot_res.list_of("my_videos")
     reply = ""
