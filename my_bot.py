@@ -24,7 +24,7 @@ def check_add(message):
 
 @bot.message_handler(commands=['start', 'Start'])
 def send_welcome(message):
-    print(message)
+    print("name:{}\ntext:{}".format(message.from_user.first_name, message.text))
     users.add_user(message.from_user.id, message.chat.id)
     bot.reply_to(message, message.from_user.first_name + " didn't choose the giant rubber duck in the sky "
                                                          'he choose him')
@@ -32,7 +32,7 @@ def send_welcome(message):
 
 @bot.message_handler(func=user_is_in, commands=['credits'])
 def send_welcome(message):
-    print(message)
+    print("name:{}\ntext:{}".format(message.from_user.first_name, message.text))
     bot.reply_to(message, 'this bot crated by {} as a joke and will probably crash and set on fire in one second 🔥'
                  .format(message.from_user.first_name))
     bot.send_animation(message.chat.id, open('head_on_fire.gif', 'rb'))
@@ -40,14 +40,14 @@ def send_welcome(message):
 
 @bot.message_handler(func=user_is_in, commands=['corona'])
 def corona(message):
-    print(message)
+    print("name:{}\ntext:{}".format(message.from_user.first_name, message.text))
     bot.send_animation(message.chat.id, open('corona.gif', 'rb'))
 
 
 @bot.message_handler(func=user_is_in, commands=['random_video', 'Random_video', 'video', 'Video'])
 def vid(message):
     try:
-        print(message)
+        print("name:{}\ntext:{}".format(message.from_user.first_name, message.text))
         to_send = my_bot_res.random_vid()
         reply_to_step(message, to_send)
     except Exception as e:
@@ -82,7 +82,7 @@ you mast use /start for the bot to react to you
 
 @bot.message_handler(func=user_is_in, regexp='🦆')
 def pepper_send(message):
-    print(message)
+    print("name:{}\ntext:{}".format(message.from_user.first_name, message.text))
     bot.reply_to(message, '{} has used a duck in the chat\nremember a duck is not a rubber duck, so please {} dont use '
                           'it as a debugger.\nfor safe practice of rubber duck debugging '
                           '\nhttps://en.wikipedia.org/wiki/Rubber_duck_debugging '
@@ -91,7 +91,7 @@ def pepper_send(message):
 
 @bot.message_handler(func=user_is_in, regexp='🌶')
 def pepper_send(message):
-    print(message)
+    print("name:{}\ntext:{}".format(message.from_user.first_name, message.text))
     bot.reply_to(message, '{} has used a pepper in the chat\nall hail {}!'
                  .format(message.from_user.first_name, message.from_user.first_name))
 
@@ -136,7 +136,7 @@ def the_Eevee_question(message):
 
 @bot.message_handler(func=user_is_in, commands=['duck'])
 def duck_debug(message):
-    print(message.from_user.first_name)
+    print("name:{}\ntext:{}".format(message.from_user.first_name, message.text))
     width = 3
     markup = types.ReplyKeyboardMarkup(row_width=width)
     itembtn1 = types.KeyboardButton('yellow')
