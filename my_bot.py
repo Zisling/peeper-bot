@@ -189,7 +189,7 @@ def duck_step(message):
             else:
                 duck.unregister()
                 bot.send_message(message.chat.id, "The end", reply_markup=markup)
-                bot.send_animation(message.chat.id, open('community_dance.gif', 'rb'))
+                bot.send_animation(message.chat.id, open('the_gif_in_the_sky.gif', 'rb'))
                 print('end')
         else:
             my_bot_res.unregister(duck_id)
