@@ -9,19 +9,31 @@ list = {"my_videos": (
     'https://www.youtube.com/watch?v=_3aeQKOQd7I')}
 
 story = {
-    "yellow": ('text:the yellow duck is smiling at you like a creep 🙂',
-               'text:you need to run for your life',
-               'text:run the duck is after you',),
-    "red": ('text:you go to your shower with your trusted red duck',
-            'text:you start singing in the shower and then...',
-            'text:a sword cut the duck down',
-            'text:you start a fight with 12 different duck ninja',
-            'text:and you lose and die while Eevee is watching you\nimg:ivy.png',
+    "yellow": (
+        'text:the yellow duck is smiling at you like a creep 🙂\ntext:dont move\nimg:yellow\\1.jpg',
+        'she cant see us if we dont move\nimg:yellow\\2.jpg',
+        'img:yellow\\3.jpg',
+        'img:yellow\\4.jpg',
+        'img:yellow\\4.jpg\nimg:yellow\\6.jpg\ntext:i think she see as run',
+        'text:haaaaaaaaaaa\nimg:yellow\\7.jpg',),
+    "red": ('text:This is the legend of the red rubber duck ,the most red duck in the house\nimg:red\\1.png',
+            'text:one day you take the red rubber duck for a walk\nimg:red\\2.png',
+            'text:and then form no where a sword is throw at you\nimg:red\\3.png',
+            'text:you fall to the ground and start bleeding as 4 rubber duck ninja jump at you\nimg:red\\4.png',
+            'text:you think for you self this is how i go, but the you look up as you red rubber duck stop them'
+            '\nimg:red\\5.png',
+            'img:red\\6.png\nimg:red\\7.png',
+            'text:then before you say to your red rubber duck tanks\n'
+            'text:he start to speak and say: weak human and push down the sword\n'
+            'img:red\\8.png',
             ),
-    "blue": ('img:blue1.jpg',
-             'img:blue2.jpg',
-             'img:blue3.jpg',
-             'img:blue4.jpg',
+    "blue": ('img:blue\\1.png',
+             'img:blue\\2.png',
+             'img:blue\\3.png',
+             'img:blue\\4.png',
+             'img:blue\\5.png',
+             'img:blue\\6.png',
+             'img:blue\\7.png',
              ),
     "white": ('text:dont blink\nimg:angel1.jpg',
               'text:why did you blink\nsti:angel2.webp',

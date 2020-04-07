@@ -28,13 +28,14 @@ def send_welcome(message):
     users.add_user(message.from_user.id, message.chat.id)
     bot.reply_to(message, message.from_user.first_name + " didn't choose the giant rubber duck in the sky "
                                                          'he choose him')
-[]
+
 
 @bot.message_handler(func=user_is_in, commands=['credits'])
 def send_welcome(message):
     print(message)
     bot.reply_to(message, 'this bot crated by {} as a joke and will probably crash and set on fire in one second 🔥'
                  .format(message.from_user.first_name))
+    bot.send_animation(message.chat.id, open('head_on_fire.gif', 'rb'))
 
 
 @bot.message_handler(func=user_is_in, commands=['corona'])
@@ -68,14 +69,14 @@ def gif(message):
 def send_list_of_commands(message):
     bot.reply_to(message, """
 you mast use /start for the bot to react to you
-start - let the giant rubber duck in the sky to listen to you
-help - let the giant rubber duck in the sky to help you
-duck - let the giant rubber duck in the sky to guide you
-videos - let the giant rubber duck in the sky to show you
-corona - let the giant rubber duck in the sky to heal you
-gif - let the giant rubber duck in the sky to gif you
-video - let the giant rubber duck in the sky to video you
-credits - let the giant rubber duck in the sky to credit you
+/start - let the giant rubber duck in the sky to listen to you
+/help - let the giant rubber duck in the sky to help you
+/duck - let the giant rubber duck in the sky to guide you
+/videos - let the giant rubber duck in the sky to show you
+/corona - let the giant rubber duck in the sky to heal you
+/gif - let the giant rubber duck in the sky to gif you
+/video - let the giant rubber duck in the sky to video you
+/credits - let the giant rubber duck in the sky to credit you
     """)
 
 
