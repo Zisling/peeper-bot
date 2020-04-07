@@ -26,8 +26,8 @@ def check_add(message):
 def send_welcome(message):
     print(message)
     users.add_user(message.from_user.id, message.chat.id)
-    bot.reply_to(message, message.from_user.first_name + """ didn't choose the giant rubber duck in the sky
-    he choose him""")
+    bot.reply_to(message, message.from_user.first_name + " didn't choose the giant rubber duck in the sky "
+                                                         'he choose him')
 
 
 @bot.message_handler(func=user_is_in, commands=['credits'])
