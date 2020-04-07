@@ -39,7 +39,7 @@ story = {
               'text:why did you blink\nsti:angel2.webp',
               'text:run for your life',
               ),
-    "the big duck up in the sky": ('img:the_big_duck_in_the_sky.png',)
+    "the giant rubber duck up in the sky": ('img:the_big_duck_in_the_sky.png',)
 }
 
 

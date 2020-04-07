@@ -143,7 +143,7 @@ def duck_debug(message):
     itembtn2 = types.KeyboardButton('red')
     itembtn3 = types.KeyboardButton('blue')
     itembtn4 = types.KeyboardButton('white')
-    itembtn5 = types.KeyboardButton('the big duck up in the sky')
+    itembtn5 = types.KeyboardButton('the giant rubber duck up in the sky')
     markup.add(itembtn1, itembtn2, itembtn3, itembtn4, itembtn5)
     bot.send_photo(message.chat.id, open('4ducks.jpg', 'rb'))
     msg = bot.send_message(message.chat.id, "Choose a duck to start debugging:", reply_markup=markup)
@@ -159,7 +159,7 @@ def duck2(message):
         itembtn1 = types.KeyboardButton('Step')
         markup2 = types.ReplyKeyboardMarkup(row_width=1)
         markup2.add(itembtn1)
-        if answer == 'yellow' or answer == "red" or answer == 'white' or answer == 'the big duck up in the sky' or answer == 'blue':
+        if answer == 'yellow' or answer == "red" or answer == 'white' or answer == 'the giant rubber duck up in the sky' or answer == 'blue':
             duck = my_bot_res.get_self(duck_id, answer)
             reply = duck.step()
             msg = multiple_reply(message, reply, markup2)
