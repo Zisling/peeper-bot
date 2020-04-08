@@ -6,7 +6,9 @@ import random
 
 list = {"my_videos": (
     'https://www.youtube.com/watch?v=nzeLzlbjszQ', 'https://www.youtube.com/watch?v=1Pf53iFqm4Y',
-    'https://www.youtube.com/watch?v=_3aeQKOQd7I')}
+    'https://www.youtube.com/watch?v=_3aeQKOQd7I'),
+    "random-vid": ('https://www.youtube.com/watch?v=f5d8pVg3Qtg&feature=youtu.be',)
+}
 
 story = {
     "yellow": (
@@ -58,7 +60,7 @@ def random_vid():
     # switch to add video from the pc
     # list_vid = glob.glob('random_vid/*.mp4')
     # list_vid.extend(list['my_videos'])
-    list_vid = list['my_videos']  # switch
+    list_vid = list['my_videos']+list['random-vid']  # switch
     ret = random.choice(list_vid)
     x = re.match('.+\.mp4', str(ret))
     if x is not None and x.span()[1] == str(ret).__len__():
