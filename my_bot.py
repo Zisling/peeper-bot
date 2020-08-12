@@ -1,10 +1,9 @@
-# url = "https://api.telegram.org/bot1242526231:AAF_E6iJo8Gw0GpTjgOI3k2wGlJJZQzWeYI/"
 import json
 import telebot
 import my_bot_res
 from telebot import types
 
-bot = telebot.TeleBot("1242526231:AAF_E6iJo8Gw0GpTjgOI3k2wGlJJZQzWeYI")
+bot = telebot.TeleBot("token")
 users = my_bot_res.Users()
 
 
